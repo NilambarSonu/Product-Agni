@@ -1,0 +1,195 @@
+Goal:
+Create a hyper-realistic, futuristic, highly animated single-page product website for Agni — a novel soil-scanner device (an original invention). The site should sell the device’s precision, AI analytics, and real-world farm value. Build with modern web stack and production standards so the output from Replit is immediately runnable, editable, and deployable.
+
+Must-have tech stack & libs:
+
+React (Vite) or Next.js (prefer Vite for simplicity), TypeScript preferred.
+
+Tailwind CSS for styling.
+
+Framer Motion for UI micro-interactions.
+
+Three.js (or react-three-fiber) for a rotatable 3D model of the Agni device (placeholder GLB provided).
+
+Lottie for vector micro-animations (for sensors, data flow).
+
+Mapbox GL JS or Leaflet for interactive field heatmap demo (static demo data).
+
+Recharts (or Chart.js) for animated charts.
+
+Optional: GSAP for timeline animations (if required).
+
+Build + Deploy scripts (npm run dev, build, preview).
+
+Design directions:
+
+Visual language: ultra-clean, futuristic, tactile tech. Emphasize realism (material shaders on 3D model), subtle particle/data flow animations, and polished micro-interactions.
+
+Tone: confident, scientific, farmer-friendly — "lab-grade but for the field".
+
+Layout: single page with sections (Hero, Problem, Solution, How it Works, Live Demo (3D + Map), Key Specs, Use Cases, Integrations, CTA, Footer).
+
+Color palette (futuristic & high-contrast):
+
+Primary deep background (graphite): #0B0F1A (almost-black navy)
+
+Primary accent (electric cyan/teal): #00F0FF
+
+Secondary accent (neon magenta): #FF2D9C
+
+Gradient highlight: linear-gradient(90deg, #00F0FF 0%, #6DE8FF 45%, #FF2D9C 100%)
+
+Metallic mid tone (steel): #2B3240
+
+Soft surface (glass/plate): rgba(255,255,255,0.03) for cards
+
+CTA (energetic): #00E6A8 (button hover variant #00FFC2)
+
+Text primary: #E6F0FF (off-white for readability)
+
+Text muted: #9AA7B2
+
+Typography:
+
+Headline: Inter or Manrope, weight 700–900, large letter spacing for hero.
+
+Body: Inter / Source Sans Pro, comfortable line-height (1.6).
+
+Use variable fonts if available.
+
+Hero content (exact copy — use as canonical):
+
+Headline: “Agni — Laboratory-Grade Soil Intelligence, Field-Ready”
+
+Subhead: “One probe. Meter-by-meter soil data. AI recommendations you can act on.”
+
+CTA primary: “Request Demo”
+
+CTA secondary: “See Live Demo”
+
+Micro copy examples for sections (short snippets):
+
+Problem line: “Most decisions on farms happen blind — Agni makes the soil speak.”
+
+Feature bullets: “Real-time moisture (%) · pH & nutrients · Geolocated variability maps · VM recommendations”
+
+Trustline: “Developed for Indian soils — field-calibrated, rugged, and ready.”
+
+UX & interactions:
+
+Hero: center 3D model of Agni device (draggable rotation, slow auto-rotate). When user hovers/clicks a sensor area on the model show a tooltip panel with sensor specs (pH probe, NIR sensor, EC sensor).
+
+Device → Data Flow Animation: animate tiny particles moving from the probe into a cloud icon and into a dashboard card (use Three.js particle system or Lottie).
+
+Map demo: interactive heatmap with a timeline slider — animates soil moisture changes across the field.
+
+Charts: animated line + area charts showing trends; on hover show precise values and a small inspector card with actionable tip (“Zone A: apply 12% less N”).
+
+Scrolling: use scroll-triggered reveals and parallax for soil layers (different speeds for surface, subsoil & bedrock layers).
+
+Buttons: subtle glassy neumorphic style with cyan glow on hover. Use motion for pressed state.
+
+Micro-interactions: icon morphs, micro delays (40–120ms) and spring physics for motion.
+
+Accessibility & performance:
+
+All interactive elements keyboard accessible and ARIA labelled.
+
+Ensure 3D model falls back to static hero image on low-power devices; lazy load GLB or use <Suspense>.
+
+Use compressed GLB (Draco) and optimized Lottie JSONs.
+
+Respect prefers-reduced-motion: disable auto-rotate/large motions if user prefers reduced motion.
+
+Contrast checks: ensure text on backgrounds meets WCAG AA.
+
+Content mapping (sections + behavior):
+
+Hero — 3D model, headline, two CTAs, short benefit bullets.
+
+Problem — three card highlights with subtle hover animations.
+
+Solution (Agni) — pictorial stacked cards describing sensor suite + calibration + Megha integration.
+
+How it works — animated 4-step horizontal timeline (Deploy → Capture → Analyze → Act).
+
+Live Demo — interactive 3D + small dashboard + heatmap. Use sample CSV/JSON (provide 12–20 sample data points).
+
+Specs & Accuracy — table with sensor specs and accuracy lines (e.g., Moisture ±0.5%, pH ±0.1 etc).
+
+Use Cases & ROI — short bullets, CTA to download datasheet.
+
+Integrations — icons for ISOBUS, API, mobile app, CSV export.
+
+CTA strip — full width gradient with small form (email + farm area + request type).
+
+Footer — legal, privacy, contact.
+
+Developer deliverables (what Replit must produce):
+
+Complete project scaffold (package.json, tsconfig, tailwind.config).
+
+Components: Hero, Device3D, MapDemo, ChartPanel, FeatureGrid, SpecTable, CTAForm, Footer.
+
+Assets: placeholder GLB for device (name: agni-device.glb), sample JSON data sample-field-data.json, 3 Lottie animations data-flow.json, sensor-pulse.json, map-blob.json.
+
+README with run & deploy instructions (dev, build, preview).
+
+API stubs: /api/demo-data returning sample-field-data.json.
+
+Deploy: Vercel/Replit launch config instructions.
+
+Code quality & best practices:
+
+Use functional components, hooks, and clear folder structure: src/components, src/pages, src/styles, src/assets, src/lib.
+
+Use Tailwind utility classes with CSS variables for color tokens.
+
+TypeScript types for sensor data & map coordinates.
+
+Add eslint + prettier config.
+
+Unit test example for a simple util (optional).
+
+Animations & visual assets suggestions:
+
+3D device with PBR metallic shader, soft rim lights (cyan + magenta) to match palette.
+
+Particle trails from probe → cloud using small glow sprites.
+
+Lottie micro-animations for sensor widgets.
+
+Soft glass cards with blurred background (backdrop-filter) and faint neon edges.
+
+Performance & fallback:
+
+Lazy load heavy libs (three.js, mapbox).
+
+Provide static image fallback for hero and interactive demo for mobile.
+
+Use gzip / Brotli for production and optimized images/webp.
+
+Legal & copy notes:
+
+Add short statement: “Agni — intellectual property of Mitti-AI. For demo purposes only.”
+
+Privacy: link to data ownership — “Farmers own their data.”
+
+Sample commit message (first commit):
+feat: initial Agni product site scaffold — hero, 3D placeholder, map demo, animations, tailwind setup
+
+Sample Hero CTAs and microcopy (ready to paste):
+
+Primary CTA: “Request Demo” (opens modal)
+
+Secondary CTA: “Try Live Demo” (scrolls to demo)
+
+Microcopy under hero: “Meter-by-meter soil intelligence. Field-ready, lab-accurate insights — built by Mitti-AI.”
+
+Final notes for generator:
+
+Make the site feel original: avoid copying competitor layouts; aim for a tactile tech feel.
+
+Prioritize a seamless first impression: hero + 3D + animated data flow must be visible above the fold on desktop.
+
+Keep code modular so design/animation tweaks are easy.
