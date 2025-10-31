@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import agniDeviceImage from "@assets/ChatGPT Image Oct 31, 2025, 09_02_07 PM_1761924736239.png";
+import agniDevice3DModel from "@assets/Copilot3D-0ec922cd-8d80-402d-9e95-a9db3218554e_1761927687647.gif";
 
 interface HeroProps {
   onRequestDemo: () => void;
@@ -147,12 +147,11 @@ export default function Hero({ onRequestDemo, onSeeLiveDemo }: HeroProps) {
               />
               
               <motion.img
-                src={agniDeviceImage}
-                alt="Agni Soil Scanner Device"
+                src={agniDevice3DModel}
+                alt="Agni Soil Scanner Device - 3D Rotating Model"
                 className="relative z-10 w-full h-auto drop-shadow-2xl"
                 animate={{
                   y: [0, -20, 0],
-                  rotateY: [0, 5, 0],
                 }}
                 transition={{
                   duration: 6,
