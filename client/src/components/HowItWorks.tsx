@@ -1,29 +1,29 @@
 import { motion } from "framer-motion";
-import { MapPin, Radio, Brain, Tractor } from "lucide-react";
+import { MapPin, Smartphone, Brain, MessageSquare } from "lucide-react";
 
 const steps = [
   {
     icon: MapPin,
     title: "Deploy",
-    description: "Insert Agni probe into the soil at designated grid points across your field.",
+    description: "Simply push the field-ready Agni probe into your soil. No training required.",
     color: "from-primary to-primary/50",
   },
   {
-    icon: Radio,
+    icon: Smartphone,
     title: "Capture",
-    description: "Real-time sensors measure moisture, pH, nutrients, and EC at each location.",
+    description: "Connect to the Saathi App via Bluetooth. The Agni device, powered by an ESP32-S3 microcontroller, instantly reads 14+ soil parameters with its high-precision sensors.",
     color: "from-[#6DE8FF] to-primary",
   },
   {
     icon: Brain,
     title: "Analyze",
-    description: "AI processes data to create variability maps and identify optimization zones.",
+    description: "The data is sent to our Megha AI engine, which analyzes your unique soil health, crop type, and local conditions in real-time.",
     color: "from-secondary to-[#6DE8FF]",
   },
   {
-    icon: Tractor,
+    icon: MessageSquare,
     title: "Act",
-    description: "Receive precise variable-rate recommendations for irrigation and fertilization.",
+    description: "Get simple, actionable advice in your local language—delivered instantly by your Saathi App. (\"Add 20kg less Urea, saving you ₹400\").",
     color: "from-accent to-secondary",
   },
 ];

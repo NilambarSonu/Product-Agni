@@ -50,7 +50,8 @@ export default function Hero({ onRequestDemo, onSeeLiveDemo }: HeroProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                Agni — <span className="bg-gradient-to-r from-primary via-[#6DE8FF] to-secondary bg-clip-text text-transparent">Laboratory-Grade</span> Soil Intelligence, Field-Ready
+                Most decisions on farms happen <span className="text-secondary">blind</span>. <br className="hidden md:block" />
+                Agni makes the soil <span className="bg-gradient-to-r from-primary via-[#6DE8FF] to-accent bg-clip-text text-transparent">speak</span>.
               </motion.h1>
               
               <motion.p
@@ -59,7 +60,7 @@ export default function Hero({ onRequestDemo, onSeeLiveDemo }: HeroProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                One probe. Meter-by-meter soil data. AI recommendations you can act on.
+                Our Agni IoT scanner delivers lab-grade soil analysis in 30 seconds. Our <span className="font-semibold text-primary">Saathi AI app</span> translates that data into simple, profitable advice in your local language.
               </motion.p>
             </div>
 

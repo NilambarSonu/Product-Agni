@@ -1,35 +1,35 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Droplets, Flame, Zap, Cloud } from "lucide-react";
+import { Droplets, Shield, Smartphone, MapPin } from "lucide-react";
 
 const features = [
   {
     icon: Droplets,
     title: "Precision Sensor Suite",
-    description: "pH probe, NIR sensor, EC sensor — all calibrated for Indian soil conditions.",
-    specs: ["±0.5% moisture", "±0.1 pH accuracy", "Real-time EC"],
+    description: "Get lab-grade accuracy on all key parameters. Our advanced electrochemical and NIR (Near-Infrared) sensors provide real-time data you can trust.",
+    specs: ["±0.5% moisture", "±0.1 pH accuracy", "14+ parameters"],
     color: "from-primary/20 to-primary/5",
   },
   {
-    icon: Flame,
+    icon: Shield,
     title: "Field-Hardened Design",
-    description: "Rugged, weatherproof construction built to withstand harsh field conditions.",
-    specs: ["IP67 rated", "Temperature resistant", "Impact tested"],
+    description: "Built for the real world. The Agni device is IP67-rated (weatherproof and dustproof), with a 24-hour battery life and durable construction.",
+    specs: ["IP67 rated", "24-hour battery", "ESP32-S3 powered"],
     color: "from-secondary/20 to-secondary/5",
   },
   {
-    icon: Zap,
-    title: "AI-Powered Analytics",
-    description: "Machine learning models trained on thousands of Indian farm data points.",
-    specs: ["Variable rate maps", "Nutrient recommendations", "Yield predictions"],
+    icon: Smartphone,
+    title: "AI-Powered Saathi App",
+    description: "The real magic. Agni provides the data, but the Saathi App provides the wisdom. It's the only platform that gives you a simple, AI-generated action plan.",
+    specs: ["Local language support", "Instant advice", "Profit-focused"],
     color: "from-accent/20 to-accent/5",
   },
   {
-    icon: Cloud,
-    title: "Megha Integration",
-    description: "Seamless sync with Megha platform for complete farm management.",
-    specs: ["Cloud sync", "Mobile app", "API access"],
+    icon: MapPin,
+    title: "GPS Geolocation",
+    description: "Every scan is automatically tagged with GPS coordinates. This allows the Saathi App to build a \"Field Heatmap\", showing you exactly which zones need more or less water and fertilizer.",
+    specs: ["Auto GPS tagging", "Field heatmaps", "Zone-based insights"],
     color: "from-primary/20 via-secondary/10 to-accent/20",
   },
 ];

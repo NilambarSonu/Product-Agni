@@ -16,8 +16,8 @@ const integrations = [
   },
   {
     icon: Smartphone,
-    name: "Mobile App",
-    description: "iOS & Android apps for real-time monitoring in the field",
+    name: "Saathi App",
+    description: "iOS & Android app with AI-powered advice in your local language",
   },
   {
     icon: Download,
