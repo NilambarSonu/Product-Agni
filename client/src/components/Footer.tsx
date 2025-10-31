@@ -1,7 +1,15 @@
-import { motion } from "framer-motion";
 import { Separator } from "@/components/ui/separator";
 
-export default function Footer() {
+interface FooterProps {
+  onLinkClick: (type: 'scroll' | 'modal', target: string) => void;
+}
+
+export default function Footer({ onLinkClick }: FooterProps) {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, type: 'scroll' | 'modal', target: string) => {
+    e.preventDefault();
+    onLinkClick(type, target);
+  };
+
   return (
     <footer className="py-12 bg-card/30 border-t border-border/50">
       <div className="container mx-auto px-6">
@@ -21,29 +29,128 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#features" className="hover:text-primary transition-colors" data-testid="link-features">Features</a></li>
-              <li><a href="#specifications" className="hover:text-primary transition-colors" data-testid="link-specifications">Specifications</a></li>
-              <li><a href="#pricing" className="hover:text-primary transition-colors" data-testid="link-pricing">Pricing</a></li>
-              <li><a href="#demo" className="hover:text-primary transition-colors" data-testid="link-demo">Request Demo</a></li>
+              <li>
+                <a 
+                  href="#features" 
+                  onClick={(e) => handleClick(e, 'scroll', 'features')}
+                  className="hover:text-primary transition-colors cursor-pointer" 
+                  data-testid="link-features"
+                >
+                  Features
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#specifications" 
+                  onClick={(e) => handleClick(e, 'scroll', 'specifications')}
+                  className="hover:text-primary transition-colors cursor-pointer" 
+                  data-testid="link-specifications"
+                >
+                  Specifications
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#pricing" 
+                  onClick={(e) => handleClick(e, 'modal', 'pricing')}
+                  className="hover:text-primary transition-colors cursor-pointer" 
+                  data-testid="link-pricing"
+                >
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#demo" 
+                  onClick={(e) => handleClick(e, 'scroll', 'demo-form')}
+                  className="hover:text-primary transition-colors cursor-pointer" 
+                  data-testid="link-demo"
+                >
+                  Request Demo
+                </a>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#about" className="hover:text-primary transition-colors" data-testid="link-about">About Us</a></li>
-              <li><a href="#contact" className="hover:text-primary transition-colors" data-testid="link-contact">Contact</a></li>
-              <li><a href="#careers" className="hover:text-primary transition-colors" data-testid="link-careers">Careers</a></li>
-              <li><a href="#blog" className="hover:text-primary transition-colors" data-testid="link-blog">Blog</a></li>
+              <li>
+                <a 
+                  href="#about" 
+                  onClick={(e) => handleClick(e, 'modal', 'about')}
+                  className="hover:text-primary transition-colors cursor-pointer" 
+                  data-testid="link-about"
+                >
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#contact" 
+                  onClick={(e) => handleClick(e, 'scroll', 'demo-form')}
+                  className="hover:text-primary transition-colors cursor-pointer" 
+                  data-testid="link-contact"
+                >
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#careers" 
+                  onClick={(e) => handleClick(e, 'modal', 'careers')}
+                  className="hover:text-primary transition-colors cursor-pointer" 
+                  data-testid="link-careers"
+                >
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#blog" 
+                  onClick={(e) => handleClick(e, 'modal', 'blog')}
+                  className="hover:text-primary transition-colors cursor-pointer" 
+                  data-testid="link-blog"
+                >
+                  Blog
+                </a>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#privacy" className="hover:text-primary transition-colors" data-testid="link-privacy">Privacy Policy</a></li>
-              <li><a href="#terms" className="hover:text-primary transition-colors" data-testid="link-terms">Terms of Service</a></li>
-              <li><a href="#data" className="hover:text-primary transition-colors" data-testid="link-data">Data Ownership</a></li>
+              <li>
+                <a 
+                  href="#privacy" 
+                  onClick={(e) => handleClick(e, 'modal', 'privacy')}
+                  className="hover:text-primary transition-colors cursor-pointer" 
+                  data-testid="link-privacy"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#terms" 
+                  onClick={(e) => handleClick(e, 'modal', 'terms')}
+                  className="hover:text-primary transition-colors cursor-pointer" 
+                  data-testid="link-terms"
+                >
+                  Terms of Service
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#data" 
+                  onClick={(e) => handleClick(e, 'modal', 'data')}
+                  className="hover:text-primary transition-colors cursor-pointer" 
+                  data-testid="link-data"
+                >
+                  Data Ownership
+                </a>
+              </li>
             </ul>
           </div>
         </div>
