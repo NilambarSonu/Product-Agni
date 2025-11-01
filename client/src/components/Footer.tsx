@@ -160,10 +160,10 @@ export default function Footer({ onLinkClick }: FooterProps) {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <p>© 2025 Mitti-AI. All rights reserved.</p>
           <p className="text-xs">
-            Agni — intellectual property of Mitti-AI. For demo purposes only.
+            Agni — intellectual property of Mitti-AI.
           </p>
           <p className="text-xs font-semibold text-primary">
-            Farmers own their data.
+            @nilambarsonubehera
           </p>
         </div>
       </div>

@@ -1,3 +1,4 @@
+// In vite.config.ts
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
@@ -7,6 +8,7 @@ export default defineConfig({
   plugins: [
     react(),
     runtimeErrorOverlay(),
+    // The Replit plugins will not run locally, which is correct.
     ...(process.env.NODE_ENV !== "production" &&
     process.env.REPL_ID !== undefined
       ? [
@@ -31,7 +33,15 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
   },
+  // --- THIS IS THE NEW/UPDATED SECTION ---
   server: {
+    // This proxies API requests to the backend server
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+      },
+    },
     fs: {
       strict: true,
       deny: ["**/.*"],

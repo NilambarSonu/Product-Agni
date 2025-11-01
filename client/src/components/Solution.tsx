@@ -6,30 +6,30 @@ import { Droplets, Shield, Smartphone, MapPin } from "lucide-react";
 const features = [
   {
     icon: Droplets,
-    title: "Precision Sensor Suite",
-    description: "Get lab-grade accuracy on all key parameters. Our advanced electrochemical and NIR (Near-Infrared) sensors provide real-time data you can trust.",
-    specs: ["±0.5% moisture", "±0.1 pH accuracy", "14+ parameters"],
+    title: "Precision Sensor Core",
+    description: "Agni’s hybrid sensing engine combines electrochemical, NIR (Near-Infrared), and temperature-compensated sensors to measure over 14 critical soil parameters — instantly and with unmatched accuracy.",
+    specs: ["±0.5% moisture", "±0.1 pH accuracy", "14+ parameters","Self-calibrating algorithms"],
     color: "from-primary/20 to-primary/5",
   },
   {
     icon: Shield,
-    title: "Field-Hardened Design",
-    description: "Built for the real world. The Agni device is IP67-rated (weatherproof and dustproof), with a 24-hour battery life and durable construction.",
-    specs: ["IP67 rated", "24-hour battery", "ESP32-S3 powered"],
+    title: "Rugged, Field-Hardened Design",
+    description: "With an IP67-rated enclosure, impact-resistant body, and 72-hour power endurance, Agni is built to thrive in heat, rain, or dust. Because real agriculture doesn’t happen in labs — it happens in the fields.",
+    specs: ["IP67 rated", "72+ hour battery", "ESP32-S3 powered"],
     color: "from-secondary/20 to-secondary/5",
   },
   {
     icon: Smartphone,
-    title: "AI-Powered Saathi App",
-    description: "The real magic. Agni provides the data, but the Saathi App provides the wisdom. It's the only platform that gives you a simple, AI-generated action plan.",
-    specs: ["Local language support", "Instant advice", "Profit-focused"],
+    title: "AI-Driven Saathi App",
+    description: "Agni collects data that’s seamlessly synced to the Saathi-AI Mobile App. Using advanced AI algorithms, Saathi translates raw soil data into actionable insights, personalized recommendations, and crop-specific advice.",
+    specs: ["AI-generated crop & soil insights","Ferilizer recomodation", "Local language guidance", "Real-time decision support","Profit Oriented analytics"],
     color: "from-accent/20 to-accent/5",
   },
   {
     icon: MapPin,
-    title: "GPS Geolocation",
-    description: "Every scan is automatically tagged with GPS coordinates. This allows the Saathi App to build a \"Field Heatmap\", showing you exactly which zones need more or less water and fertilizer.",
-    specs: ["Auto GPS tagging", "Field heatmaps", "Zone-based insights"],
+    title: "Smart GPS intelligence",
+    description: "Each Agni reading is tagged to build a precision soil map of your field. The integratd GPS creates color-coded heatmaps, showing exactly where to irrigate, fertilize,or rest the soil",
+    specs: ["Auto GPS tagging", "Samrt field mappiing", "Location-aware soil insights"],
     color: "from-primary/20 via-secondary/10 to-accent/20",
   },
 ];
@@ -50,16 +50,16 @@ export default function Solution() {
           className="text-center mb-16"
         >
           <Badge className="mb-4 px-4 py-2 text-sm" data-testid="badge-solution">
-            The Agni Solution
+            The Agni Soil-Sensor
           </Badge>
           <h2 className="font-headline text-4xl md:text-6xl font-black mb-6">
-            Laboratory precision. <br className="hidden md:block" />
+            Technology Used in Our: <br className="hidden md:block" />
             <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              Field-ready durability.
+               Agni Soil Sensor.
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Developed for Indian soils — field-calibrated, rugged, and ready.
+            Every Agni device is field-calibrated on Indian farms to ensure accuracy, durability, and trust — bringing the power of data to every farmer’s hand.
           </p>
         </motion.div>
 

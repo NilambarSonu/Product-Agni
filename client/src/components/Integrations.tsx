@@ -7,32 +7,32 @@ const integrations = [
   {
     icon: Plug,
     name: "ISOBUS",
-    description: "Direct tractor integration for precision agriculture equipment",
+    description: "Agni communicates directly with ISOBUS-enabled farm machinery, enabling precision seeding, irrigation, and fertilization control straight from your tractor interface.",
   },
   {
     icon: Cloud,
     name: "REST API",
-    description: "Full API access for custom integrations and data analysis",
+    description: "Full access for custom integrations and analytics.",
   },
   {
     icon: Smartphone,
     name: "Saathi App",
-    description: "iOS & Android app with AI-powered advice in your local language",
+    description: "Available on iOS and Android, the Saathi App provides real-time insights, alerts, and recommendations — all in your local language, powered by Megha AI and our own LLM model(Mitti LLM).",
   },
   {
     icon: Download,
-    name: "CSV Export",
-    description: "Export data for use with Excel, R, Python, or other tools",
+    name: "CSV & Data Export",
+    description: "Instantly export soil data in PDF format for advanced analytics using Python — ideal for researchers and agronomists.",
   },
   {
     icon: SiMqtt,
-    name: "MQTT/IoT",
+    name: "MQTT/IoT Integration",
     description: "Connect to existing farm IoT infrastructure seamlessly",
   },
   {
     icon: Cloud,
     name: "Megha Platform",
-    description: "Native integration with Mitti-AI's farm management system",
+    description: "Serves as the unified AI + database core for Agni and Saathi.",
   },
 ];
 
@@ -50,7 +50,7 @@ export default function Integrations() {
             Integrates with <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Everything</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Agni works with your existing tools and workflows
+            Agni fits seamlessly into your existing farm ecosystem
           </p>
         </motion.div>
 

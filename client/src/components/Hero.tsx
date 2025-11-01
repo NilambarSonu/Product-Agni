@@ -60,7 +60,7 @@ export default function Hero({ onRequestDemo, onSeeLiveDemo }: HeroProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                Our Agni IoT scanner delivers lab-grade soil analysis in 30 seconds. Our <span className="font-semibold text-primary">Saathi AI app</span> translates that data into simple, profitable advice in your local language.
+                Our Agni IoT scanner delivers lab-grade soil analysis in just 30 seconds. Our <span className="font-semibold text-primary">Saathi AI app</span> analyze the soil data and provide simple and actionable advice in your local language.
               </motion.p>
             </div>
 
@@ -73,7 +73,7 @@ export default function Hero({ onRequestDemo, onSeeLiveDemo }: HeroProps) {
               <Button
                 size="lg"
                 onClick={onRequestDemo}
-                className="text-lg px-8 py-6 bg-accent hover:bg-accent/90 text-accent-foreground hover-elevate active-elevate-2 shadow-lg shadow-accent/20"
+                className="text-lg px-5 py-6 bg-accent hover:bg-accent/90 text-accent-foreground hover-elevate active-elevate-2 shadow-lg shadow-accent/20"
                 data-testid="button-request-demo"
               >
                 Request Demo
@@ -98,7 +98,7 @@ export default function Hero({ onRequestDemo, onSeeLiveDemo }: HeroProps) {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
             >
-              Meter-by-meter soil intelligence. Field-ready, lab-accurate insights — built by Mitti-AI.
+              Our platform facilitates precision farming through three tightly integrated components---the Agni IoT Soil Scanner, the Saathi AI Mobile App, and the Megha Cloud Database.
             </motion.p>
 
             <motion.div
@@ -110,8 +110,8 @@ export default function Hero({ onRequestDemo, onSeeLiveDemo }: HeroProps) {
               {[
                 { label: "Moisture", value: "±0.5%", icon: "💧" },
                 { label: "pH Level", value: "±0.1", icon: "⚗️" },
-                { label: "Nutrients", value: "Real-time", icon: "🌱" },
-                { label: "Maps", value: "Geolocated", icon: "🗺️" },
+                { label: "Nutrients", value: "N-P-K", icon: "🌱" },
+                { label: "Maps", value: "SateliteView", icon: "🗺️" },
               ].map((feature, i) => (
                 <motion.div
                   key={feature.label}

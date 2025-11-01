@@ -5,25 +5,25 @@ const steps = [
   {
     icon: MapPin,
     title: "Deploy",
-    description: "Simply push the field-ready Agni probe into your soil. No training required.",
+    description: "Push the Agni probe into the soil — that’s it.Its compact, weatherproof design is ready for the field, requiring no calibration or technical skill.",
     color: "from-primary to-primary/50",
   },
   {
     icon: Smartphone,
     title: "Capture",
-    description: "Connect to the Saathi App via Bluetooth. The Agni device, powered by an ESP32-S3 microcontroller, instantly reads 14+ soil parameters with its high-precision sensors.",
+    description: "Connect Agni to the Saathi App via Bluetooth.The ESP32-S3 powered system captures 14+ soil parameters — including moisture, pH, NPK, EC, and organic carbon — all with lab-grade accuracy",
     color: "from-[#6DE8FF] to-primary",
   },
   {
     icon: Brain,
     title: "Analyze",
-    description: "The data is sent to our Megha AI engine, which analyzes your unique soil health, crop type, and local conditions in real-time.",
+    description: "Your data travels to Megha Engine, our cloud-based AI system.It studies your soil health, crop profile, and local weather data — providing deep, personalized recomadation.",
     color: "from-secondary to-[#6DE8FF]",
   },
   {
     icon: MessageSquare,
     title: "Act",
-    description: "Get simple, actionable advice in your local language—delivered instantly by your Saathi App. (\"Add 20kg less Urea, saving you ₹400\").",
+    description: "Within seconds, the Saathi App delivers AI-powered advice in your local language — clear, simple, and immediately useful. (\"Add 20kg less Urea, saving you ₹400\").",
     color: "from-accent to-secondary",
   },
 ];
@@ -39,10 +39,10 @@ export default function HowItWorks() {
           className="text-center mb-16"
         >
           <h2 className="font-headline text-4xl md:text-6xl font-black mb-6">
-            How It Works
+            How Agni Works
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            From deployment to actionable insights in four simple steps
+            From Soil to Solution — in Four Intelligent Steps.
           </p>
         </motion.div>
 

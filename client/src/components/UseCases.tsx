@@ -7,29 +7,29 @@ const useCases = [
   {
     icon: Droplets,
     title: "Precision Irrigation",
-    description: "Save 20-30% water with zone-specific irrigation schedules",
+    description: "Agni enables zone-specific irrigation by mapping real-time soil moisture variability. Farmers can cut 20–30% water usage while maintaining optimal crop health.",
     roi: "₹45,000/yr saved",
     color: "from-primary/20 to-primary/5",
   },
   {
     icon: Sprout,
     title: "Variable Rate Fertilization",
-    description: "Apply nutrients only where needed, reducing costs by 25%",
+    description: "Agni’s soil analytics guide fertilizer application only where required, reducing costs and preventing soil stress.",
     roi: "₹60,000/yr saved",
     color: "from-accent/20 to-accent/5",
   },
   {
     icon: TrendingUp,
     title: "Yield Optimization",
-    description: "Increase crop yields by 15-20% with data-driven decisions",
+    description: "With accurate soil data and AI-driven recommendations, farmers experience 15–20% yield increases in just one growing cycle.",
     roi: "+₹1.2L/yr revenue",
     color: "from-secondary/20 to-secondary/5",
   },
   {
     icon: BarChart3,
-    title: "Soil Health Monitoring",
-    description: "Track soil degradation and maintain long-term fertility",
-    roi: "Long-term value",
+    title: "Soil Health & Longevity",
+    description: "Continuous soil monitoring prevents long-term degradation, preserves fertility, and builds resilience against climate uncertainty.",
+    roi: "Long-term ecosystem value and soil security",
     color: "from-primary/20 via-secondary/10 to-accent/10",
   },
 ];
@@ -50,10 +50,10 @@ export default function UseCases() {
           className="text-center mb-16"
         >
           <h2 className="font-headline text-4xl md:text-6xl font-black mb-6">
-            Real ROI, <span className="text-accent">Real Results</span>
+            Real ROI, <span className="text-accent">Real Impact</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From water savings to yield increases, Agni pays for itself
+            From saving water to boosting yields-- Agni pays for itself
           </p>
         </motion.div>
 

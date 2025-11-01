@@ -15,10 +15,12 @@ export default function CTAForm({ onSubmit }: CTAFormProps) {
   const [email, setEmail] = useState("");
   const [farmArea, setFarmArea] = useState("");
   const [requestType, setRequestType] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
     if (!email || !farmArea || !requestType) {
       toast({
@@ -26,23 +28,53 @@ export default function CTAForm({ onSubmit }: CTAFormProps) {
         description: "Please fill in all fields",
         variant: "destructive",
       });
+      setIsSubmitting(false);
       return;
     }
 
-    console.log('Form submitted:', { email, farmArea, requestType });
-    
-    toast({
-      title: "Request Submitted!",
-      description: "We'll get back to you within 24 hours.",
-    });
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, farmArea, requestType }),
+      });
 
-    if (onSubmit) {
-      onSubmit({ email, farmArea, requestType });
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "Request Submitted!",
+          description: result.message,
+        });
+
+        // Reset form
+        setEmail("");
+        setFarmArea("");
+        setRequestType("");
+
+        // Call parent onSubmit if provided
+        if (onSubmit) {
+          onSubmit({ email, farmArea, requestType });
+        }
+      } else {
+        toast({
+          title: "Submission Failed",
+          description: result.message,
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Network Error",
+        description: "Failed to submit form. Please check your connection and try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
-
-    setEmail("");
-    setFarmArea("");
-    setRequestType("");
   };
 
   return (
@@ -80,6 +112,7 @@ export default function CTAForm({ onSubmit }: CTAFormProps) {
                   onChange={(e) => setEmail(e.target.value)}
                   className="h-12 bg-background/50 border-border/50"
                   data-testid="input-email"
+                  required
                 />
               </div>
 
@@ -95,6 +128,7 @@ export default function CTAForm({ onSubmit }: CTAFormProps) {
                   onChange={(e) => setFarmArea(e.target.value)}
                   className="h-12 bg-background/50 border-border/50"
                   data-testid="input-farm-area"
+                  required
                 />
               </div>
 
@@ -120,10 +154,11 @@ export default function CTAForm({ onSubmit }: CTAFormProps) {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full h-12 text-lg bg-accent hover:bg-accent/90 hover-elevate active-elevate-2 shadow-lg shadow-accent/20"
+                disabled={isSubmitting}
+                className="w-full h-12 text-lg bg-accent hover:bg-accent/90 hover-elevate active-elevate-2 shadow-lg shadow-accent/20 disabled:opacity-50 disabled:cursor-not-allowed"
                 data-testid="button-submit-request"
               >
-                Submit Request
+                {isSubmitting ? "Sending..." : "Submit Request"}
               </Button>
 
               <p className="text-xs text-center text-muted-foreground pt-4">

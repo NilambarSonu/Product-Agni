@@ -6,20 +6,20 @@ const problems = [
   {
     icon: Eye,
     title: "Blind Decisions",
-    description: "Farmers make critical choices without knowing what's beneath the surface.",
-    stat: "70% of farms lack soil data",
+    description: "Farmers use same quantiry of chemical fertilizer every year in their farmland without knowing what's actually their soil need.",
+    stat: "inconsistent yields, unnecessary costs, and declining soil fertility.",
   },
   {
     icon: TrendingDown,
-    title: "Resource Waste",
-    description: "Over-application of water and nutrients leads to runoff and reduced yields.",
-    stat: "30% resource waste avg",
+    title: "The Resource Waste",
+    description: "Without accurate soil metrics, water and nutrient are often over-applied, leading to significant waste and environmental harm.",
+    stat: "Reduced yields, higher input costs, and ecosystem damage.",
   },
   {
     icon: Target,
-    title: "Guesswork Farming",
-    description: "Traditional methods can't capture meter-by-meter soil variability.",
-    stat: "Variable yields by 40%+",
+    title: "The Guesswork Farming Trap",
+    description: "Traditional pratices can't detect micro-variations in soil moisture,nutrients, or pH --leaving farmers to rely on guesswork instead of precision data.",
+    stat: "Lost income, inefficient planning, and unsustainable farming.",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function Problem() {
                 </p>
                 
                 <div className="pt-4 border-t border-border/50">
-                  <div className="text-sm text-muted-foreground mb-1">Industry Average</div>
+                  <div className="text-sm text-muted-foreground mb-1">Impact</div>
                   <div className="text-xl font-bold text-secondary">{problem.stat}</div>
                 </div>
               </Card>

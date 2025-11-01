@@ -9,30 +9,35 @@ const specs = [
     range: "0-100%",
     accuracy: "±0.5%",
     resolution: "0.1%",
+    technology: "Capacitive Sensor", 
   },
   {
     sensor: "pH Probe",
     range: "3.5-9.0 pH",
     accuracy: "±0.1 pH",
     resolution: "0.01 pH",
+    technology: "Electrode-based",
   },
   {
     sensor: "EC Sensor",
     range: "0-20 dS/m",
     accuracy: "±2%",
     resolution: "0.01 dS/m",
+    technology: "Conductivity-probe",
   },
   {
     sensor: "Temperature",
     range: "-20°C to 60°C",
     accuracy: "±0.3°C",
     resolution: "0.1°C",
+    technology: "Digital Thermistor",
   },
   {
     sensor: "NPK (NIR)",
     range: "0-999 ppm",
     accuracy: "±5%",
     resolution: "1 ppm",
+    technology: "near-infrared spectroscopy",
   },
 ];
 
@@ -53,7 +58,8 @@ export default function SpecsTable() {
             Lab-Grade <span className="text-primary">Precision</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Every sensor calibrated for accuracy you can trust
+            Every sensor calibrated for accuracy you can trust.
+            Agni's integrated sensor suite delivers scientific-grade data accuracy directly in the field — no lab required. Each component is individually calibrated and field-validated for Indian soil conditions.
           </p>
         </motion.div>
 
@@ -72,6 +78,7 @@ export default function SpecsTable() {
                     <th className="text-left p-6 font-bold text-sm uppercase tracking-wide">Range</th>
                     <th className="text-left p-6 font-bold text-sm uppercase tracking-wide">Accuracy</th>
                     <th className="text-left p-6 font-bold text-sm uppercase tracking-wide">Resolution</th>
+                    <th className="text-left p-6 font-bold text-sm uppercase tracking-wide">Technology</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -98,6 +105,7 @@ export default function SpecsTable() {
                         </Badge>
                       </td>
                       <td className="p-6 text-muted-foreground">{spec.resolution}</td>
+                      <td className="p-6 text-muted-foreground">{spec.technology}</td> {/* Added this line */}
                     </motion.tr>
                   ))}
                 </tbody>
@@ -117,11 +125,11 @@ export default function SpecsTable() {
               <div className="text-sm text-muted-foreground">Weatherproof Rating</div>
             </Card>
             <Card className="p-6 text-center bg-card/30 border-border/50" data-testid="card-additional-spec-1">
-              <div className="text-3xl font-black text-secondary mb-2">24h</div>
+              <div className="text-3xl font-black text-secondary mb-2">72hr+</div>
               <div className="text-sm text-muted-foreground">Battery Life</div>
             </Card>
             <Card className="p-6 text-center bg-card/30 border-border/50" data-testid="card-additional-spec-2">
-              <div className="text-3xl font-black text-accent mb-2">5yr</div>
+              <div className="text-3xl font-black text-accent mb-2">1yr</div>
               <div className="text-sm text-muted-foreground">Warranty Period</div>
             </Card>
           </motion.div>
