@@ -16,6 +16,10 @@
     "baseUrl": ".",
     "types": ["node", "vite/client"],
     "paths": {
+      // THIS IS THE NEW LINE YOU WERE MISSING
+      "@assets/*": ["./client/src/assets/*"],
+
+      // These paths you already had
       "@/*": ["./client/src/*"],
       "@shared/*": ["./shared/*"]
     }
