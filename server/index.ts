@@ -1,10 +1,9 @@
-// In server/index.ts
+
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { log } from "./vite";
 import dotenv from "dotenv";
 
-// Load environment variables
 dotenv.config();
 
 const app = express();
@@ -21,7 +20,7 @@ app.use(express.json({
 }));
 app.use(express.urlencoded({ extended: false }));
 
-// Your logging middleware can stay the same
+
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
@@ -53,7 +52,6 @@ app.use((req, res, next) => {
 });
 
 (async () => {
-  // This is now much simpler. It just registers API routes.
   const server = await registerRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
@@ -63,7 +61,6 @@ app.use((req, res, next) => {
     throw err;
   });
 
-  // The port for our backend server
   const port = 3000;
   
   server.listen({

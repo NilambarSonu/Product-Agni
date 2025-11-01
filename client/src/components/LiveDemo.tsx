@@ -166,7 +166,7 @@ export default function LiveDemo() {
               <Card className="p-8 bg-card/50 backdrop-blur-sm border-border/50" data-testid="card-heatmap">
                 <h3 className="text-2xl font-bold mb-6">Field Moisture Heatmap</h3>
                 
-                <div className="grid grid-cols-3 gap-4 mb-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
                   {heatmapData.map((zone) => (
                     <motion.div
                       key={zone.zone}

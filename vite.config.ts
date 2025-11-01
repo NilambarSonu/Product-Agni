@@ -5,7 +5,7 @@ import path from "path";
 export default defineConfig({
   plugins: [react()],
   root: "client",
-  base: "/", // Use absolute paths for production
+  base: "/", 
   build: {
     outDir: "../dist",
     emptyOutDir: true,
@@ -13,10 +13,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      // THIS IS THE NEW LINE YOU WERE MISSING
       "@assets": path.resolve(__dirname, "client/src/assets"),
-
-      // This one you already had
       "@": path.resolve(__dirname, "client/src"),
     },
   },

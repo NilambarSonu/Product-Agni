@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { TrendingUp, Droplets, Sprout, BarChart3, Download } from "lucide-react";
-
 const useCases = [
   {
     icon: Droplets,
@@ -35,6 +34,15 @@ const useCases = [
 ];
 
 export default function UseCases() {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/Agni Soil Scanner_ Official Datasheet - Google Docs.pdf";
+    link.download = "Agni-Datasheet.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section className="py-24 relative overflow-hidden">
       <div className="absolute inset-0">
@@ -106,15 +114,19 @@ export default function UseCases() {
             <p className="text-muted-foreground mb-6 max-w-2xl">
               Download our comprehensive datasheet with case studies, technical specs, and ROI models for different crop types.
             </p>
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 hover-elevate active-elevate-2"
-              onClick={() => console.log('Download datasheet')}
-              data-testid="button-download-datasheet"
+            
+            {/* --- THIS IS THE CORRECTED BUTTON --- */}
+            <Button
+              size="lg"
+              className="lg:primary hover:lg-primary/80 hover-elevate"
+              onClick={handleDownload}
+              data-testid="button download datasheet"
             >
               <Download className="mr-2 h-5 w-5" />
               Download Datasheet
             </Button>
+            {/* --- END OF CORRECTION --- */}
+
           </Card>
         </motion.div>
       </div>
