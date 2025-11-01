@@ -33,6 +33,7 @@ export default function CTAForm({ onSubmit }: CTAFormProps) {
     }
 
     try {
+      // Use relative path - Vercel will handle the routing
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
