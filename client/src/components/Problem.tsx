@@ -37,8 +37,8 @@ export default function Problem() {
           className="text-center mb-16"
         >
           <h2 className="font-headline text-4xl md:text-6xl font-black mb-6">
-            Most decisions on farms happen <span className="text-secondary">blind</span> — <br className="hidden md:block" />
-            Agni makes the soil <span className="text-primary">speak</span>.
+            When The <span className="text-secondary">Soil</span> — <br className="hidden md:block" />
+            Is a <span className="text-primary">Black BoX</span>.
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Without precise soil data, farmers operate in the dark, wasting resources and missing opportunities.
