@@ -1,14 +1,48 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { Dialog, DialogContent, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
+import { ArrowRight, Play, X } from "lucide-react";
+import { useState } from "react";
+import { useLanguage } from "@/lib/language";
 import agniDevice3DModel from "@assets/Copilot3D-0ec922cd-8d80-402d-9e95-a9db3218554e_1761927687647.gif";
 
 interface HeroProps {
   onRequestDemo: () => void;
   onSeeLiveDemo: () => void;
+  onViewDemo: () => void;
 }
 
-export default function Hero({ onRequestDemo, onSeeLiveDemo }: HeroProps) {
+export default function Hero({ onRequestDemo, onSeeLiveDemo, onViewDemo }: HeroProps) {
+  const { language, t, setLanguage } = useLanguage();
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [selectedVideoLanguage, setSelectedVideoLanguage] = useState<string | null>(null);
+  const [showLanguageSelection, setShowLanguageSelection] = useState(true);
+
+  const getVideoPath = (lang: string) => {
+    const videoPaths = {
+      'en': 'https://drive.google.com/file/d/1tBXFsxUW56PWFOuRvl-3ZHhvm3CHVXIk/preview',
+      'od': 'https://drive.google.com/file/d/15kFZVMn1oUVe14wmh_hj2irsttr1nMOi/preview',
+      'hi': 'https://drive.google.com/file/d/1SIRiUHoGij8AGdmU8Kk2dzsiuhYtIWFX/preview'
+    };
+    return videoPaths[lang as keyof typeof videoPaths] || videoPaths['en'];
+  };
+
+  const handleLanguageSelect = (lang: string) => {
+    setSelectedVideoLanguage(lang);
+    setShowLanguageSelection(false);
+  };
+
+  const handleVideoModalClose = () => {
+    setIsVideoModalOpen(false);
+    setSelectedVideoLanguage(null);
+    setShowLanguageSelection(true);
+  };
+
+  const languageOptions = [
+    { code: 'en', name: 'English', flag: '🇺🇸' },
+    { code: 'hi', name: 'हिंदी (Hindi)', flag: '🇮🇳' },
+    { code: 'od', name: 'ଓଡ଼ିଆ (Odia)', flag: '🇮🇳' }
+  ];
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-background pointer-events-none" />
@@ -65,7 +99,7 @@ export default function Hero({ onRequestDemo, onSeeLiveDemo }: HeroProps) {
             </div>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
@@ -73,23 +107,69 @@ export default function Hero({ onRequestDemo, onSeeLiveDemo }: HeroProps) {
               <Button
                 size="lg"
                 onClick={onRequestDemo}
-                className="text-lg px-5 py-6 bg-accent hover:bg-accent/90 text-accent-foreground hover-elevate active-elevate-2 shadow-lg shadow-accent/20"
+                className="futuristic-demo-button w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 h-12 sm:h-14 whitespace-nowrap bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white hover-elevate active-elevate-2 shadow-lg shadow-primary/20 transition-all duration-200 hover:scale-105"
                 data-testid="button-request-demo"
               >
                 Request Demo
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
-              
-              <Button
-                size="lg"
-                variant="outline"
-                onClick={onSeeLiveDemo}
-                className="text-lg px-8 py-6 border-primary/30 hover-elevate active-elevate-2 backdrop-blur-sm bg-card/50"
-                data-testid="button-see-live-demo"
-              >
-                <Play className="mr-2 h-5 w-5" />
-                See Live Demo
-              </Button>
+
+              <Dialog open={isVideoModalOpen} onOpenChange={setIsVideoModalOpen}>
+                <DialogTrigger asChild>
+                  <Button
+                    size="lg"
+                    className="futuristic-demo-button w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 h-12 sm:h-14 whitespace-nowrap bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white hover-elevate active-elevate-2 shadow-lg shadow-primary/20 transition-all duration-200 hover:scale-105"
+                    data-testid="button-see-live-demo"
+                  >
+                    <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                    {t('seeLiveDemo')}
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl bg-black border-0">
+                  <DialogTitle className="sr-only">Agni Demo Video</DialogTitle>
+                  <DialogDescription className="sr-only">
+                    Watch our product demo video showcasing Agni soil scanner features
+                  </DialogDescription>
+
+                  {showLanguageSelection ? (
+                    <div className="flex flex-col items-center justify-center min-h-[400px] space-y-8">
+                      <h2 className="text-2xl font-bold text-white text-center">Choose Your Language</h2>
+                      <p className="text-gray-300 text-center mb-6">Select a language to watch the demo video</p>
+                      <div className="grid grid-cols-1 gap-4 w-full max-w-md">
+                        {languageOptions.map((lang) => (
+                          <Button
+                            key={lang.code}
+                            onClick={() => handleLanguageSelect(lang.code)}
+                            className="w-full py-4 px-6 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold text-lg rounded-lg transition-all duration-200 hover:scale-105"
+                            data-testid={`language-${lang.code}`}
+                          >
+                            <span className="text-2xl mr-3">{lang.flag}</span>
+                            {lang.name}
+                          </Button>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <iframe
+                      src={getVideoPath(selectedVideoLanguage || language)}
+                      width="100%"
+                      height="100%"
+                      allow="autoplay"
+                      className="aspect-video rounded-lg"
+                      data-testid="demo-video"
+                    />
+                  )}
+
+                  <button
+                    onClick={handleVideoModalClose}
+                    className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
+                    data-testid="close-video-modal"
+                  >
+                    <X className="h-4 w-4" />
+                    <span className="sr-only">Close</span>
+                  </button>
+                </DialogContent>
+              </Dialog>
             </motion.div>
 
             <motion.p

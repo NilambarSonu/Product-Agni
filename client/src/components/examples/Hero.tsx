@@ -2,9 +2,10 @@ import Hero from '../Hero';
 
 export default function HeroExample() {
   return (
-    <Hero 
+    <Hero
       onRequestDemo={() => console.log('Request demo clicked')}
       onSeeLiveDemo={() => console.log('See live demo clicked')}
+      onViewDemo={() => console.log('View demo clicked')}
     />
   );
 }

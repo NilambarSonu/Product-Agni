@@ -15,6 +15,7 @@ import { footerModalContent } from "@/lib/footerContent";
 
 export default function Home() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isFooterModalOpen, setIsFooterModalOpen] = useState(false);
   const [footerModalData, setFooterModalData] = useState({ title: "", content: "" });
 
@@ -42,9 +43,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Hero 
+      <Hero
         onRequestDemo={() => setIsDemoModalOpen(true)}
         onSeeLiveDemo={scrollToDemo}
+        onViewDemo={() => setIsVideoModalOpen(true)}
       />
       <Problem />
       <Solution />
